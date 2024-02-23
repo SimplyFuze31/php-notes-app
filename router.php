@@ -14,4 +14,14 @@ function routeToController($url,$routes)
 
 }
 
+function abort($code = 404)
+{
+    http_response_code($code);
+
+    require "views/partials/{$code}.php";
+
+    die(404);
+
+}
+
 routeToController($_SERVER['REQUEST_URI'],$routes);
