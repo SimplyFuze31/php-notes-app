@@ -1,15 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Oops... Page not found</h1>
-    <br>
-    <a href="/"> ← Back to the main page</a>
-</body>
-</html>
+<?php require 'head.php'?>
+
+<div class="grid h-screen place-content-center bg-white px-4">
+    <div class="text-center">
+        <h1 class="text-9xl font-black text-gray-200">404</h1>
+
+        <p class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Uh-oh!</p>
+
+        <p class="mt-4 text-gray-500">We can't find that page.</p>
+
+        <a
+                href="/"
+                class="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
+        >
+            Go Back Home
+        </a>
+    </div>
+</div>
+<?php require 'footer.php'?>
