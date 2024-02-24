@@ -1,5 +1,6 @@
 <?php
 
 return [
-    '/' => 'controllers/index.php'
+    '/' => 'controllers/index.php',
+    '/notes' => 'controllers/notes.php'
 ];
