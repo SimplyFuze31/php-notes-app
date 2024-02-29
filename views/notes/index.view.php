@@ -21,7 +21,7 @@
 
 
             </a>
-            <?php for ($i = 0; $i < 5 ; $i++){
+            <?php foreach ($notes as $note){
                 require 'views/partials/note_item.php';
             }
             ?>

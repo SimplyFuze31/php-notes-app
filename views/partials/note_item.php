@@ -5,7 +5,7 @@
     <div class="sm:flex sm:justify-between sm:gap-4">
         <div>
             <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-                Building a SaaS product as a software developer
+                <?= $note['title']?>
             </h3>
 
             <p class="mt-1 text-xs font-medium text-gray-600">By John Doe</p>
@@ -15,15 +15,14 @@
 
     <div class="mt-4">
         <p class="text-pretty text-sm text-gray-500">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum provident a, ipsa
-            maiores deleniti consectetur nobis et eaque.
+            <?= $note['note_text']?>
         </p>
     </div>
 
     <dl class="mt-6 flex gap-4 sm:gap-6">
         <div class="flex flex-col">
-            <dt class="text-sm font-medium text-gray-600">Published</dt>
-            <dd class="text-xs text-gray-500">31st June, 2021</dd>
+            <p class="text-sm font-medium text-gray-600">Published</p>
+            <p class="text-xs text-gray-500"><?= date_format(date_create($note['create_date']), "d F Y")?></p>
         </div>
 
     </dl>
