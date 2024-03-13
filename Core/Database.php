@@ -14,8 +14,8 @@ class Database
 
     function query($query, $options = [])
     {
-        $statement =  $this->connection->prepare($query,$options);
-        $statement->execute();
+        $statement =  $this->connection->prepare($query);
+        $statement->execute($options);
         return $statement;
     }
 }
