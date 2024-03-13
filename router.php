@@ -14,6 +14,10 @@ function routeToController($url,$routes)
 
 }
 
+function view($path)
+{
+    return "views".DIRECTORY_SEPARATOR.$path;
+}
 function abort($code = 404)
 {
     http_response_code($code);
@@ -24,4 +28,4 @@ function abort($code = 404)
 
 }
 
-routeToController($_SERVER['REQUEST_URI'],$routes);
+routeToController($_SERVER['REDIRECT_URL'],$routes);
