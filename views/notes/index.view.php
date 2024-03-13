@@ -1,5 +1,7 @@
-<?php require '/var/www/notes.nl/views/partials/head.php'?>
-<?php require '/var/www/notes.nl/views/partials/header.php'?>
+<?php require view('partials/head.php')?>
+<?php require view('partials/header.php')?>
+
+
 
 
     <div class="grid md:grid-cols-1 gap-4 lg:grid-cols-4  md:gap-8">
@@ -35,4 +37,4 @@
 
 
 
-<?php require '/var/www/notes.nl/views/partials/footer.php'?>
+<?php require view('partials/footer.php')?>
