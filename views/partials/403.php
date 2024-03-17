@@ -9,10 +9,10 @@
         <p class="mt-4 text-gray-500">Sorry.You are not authorized</p>
 
         <a
-                href="/"
+                href="/notes"
                 class="mt-6 inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring"
         >
-            Go Back Home
+            Go Back
         </a>
     </div>
 </div>

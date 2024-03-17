@@ -8,3 +8,10 @@ function dd($value)
 
     die(69);
 }
+
+function authorize($condition)
+{
+    if (!$condition){
+        abort(Response::FORBIDDEN);
+    }
+}

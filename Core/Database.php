@@ -3,6 +3,8 @@
 class Database
 {
     private $connection;
+    private $statement;
+
     function __construct($config,$user, $pass)
     {
         $dsn = 'mysql:'.http_build_query($config,'',';');
@@ -14,8 +16,28 @@ class Database
 
     function query($query, $options = [])
     {
-        $statement =  $this->connection->prepare($query);
-        $statement->execute($options);
-        return $statement;
+        $this->statement =  $this->connection->prepare($query);
+        $this->statement->execute($options);
+        return $this;
+    }
+
+    function get()
+    {
+        return $this->statement->fetch();
+    }
+    function getOrFail()
+    {
+        $result = $this->get();
+        if (!$result){
+
+
+            abort();
+
+        }
+        return $result;
+    }
+    function getAll()
+    {
+        return $this->statement->fetchAll();
     }
 }
