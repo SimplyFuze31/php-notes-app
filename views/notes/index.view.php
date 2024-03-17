@@ -11,7 +11,7 @@
 
             <a
                     class="mb-4 inline-flex items-center gap-2 rounded border border-green-500 pe-3 text-green-600 hover:bg-green-500 hover:text-white focus:outline-none focus:ring active:bg-green-700"
-                    href="#"
+                    href="/note/create"
             >
                 <svg viewBox="-2.4 -2.4 28.80 28.80" fill="none"
                      xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
