@@ -18,13 +18,14 @@ function view($path)
 {
     return "views".DIRECTORY_SEPARATOR.$path;
 }
-function abort($code = 404)
+
+function abort($code = Response::NOT_FOUND)
 {
     http_response_code($code);
 
-    require "views/partials/{$code}.php";
+    require view("partials/{$code}.php");
 
-    die(404);
+    die($code);
 
 }
 
