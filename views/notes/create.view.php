@@ -22,8 +22,11 @@
                                 placeholder="Note title"
                                 type="text"
                                 id="title"
+                                requireds
                                 name="title"
+                                value="<?= $_POST['title'] ?? ''?>"
                         />
+                        <p class="text-red-500 text-sm"><?=$errors['title'] ?></p>
                     </div>
 
                     <div>
@@ -35,8 +38,10 @@
                                 placeholder="Note text"
                                 rows="8"
                                 id="note_text"
+                                required
                                 name="note_text"
-                        ></textarea>
+                        ><?= $_POST['note_text'] ?? ''?></textarea>
+                        <p class="text-red-500 text-sm"><?=$errors['note_text'] ?></p>
                     </div>
 
                     <div>

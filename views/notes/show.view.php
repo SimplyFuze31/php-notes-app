@@ -14,26 +14,31 @@
             <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 
                 <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                    <form action="#" class="space-y-4">
+                    <form class="space-y-4" method="post">
                         <div>
-                            <label class="sr-only" for="name">Title</label>
+                            <label class="sr-only" for="title">Title</label>
                             <input
                                     class="w-full rounded-lg border-gray-200 p-3 text-sm"
                                     placeholder="Note title"
                                     type="text"
-                                    id="name"
+                                    id="title"
+                                    name="title"
+                                    value="<?=htmlspecialchars($note['title'])?>"
                             />
                         </div>
 
                         <div>
-                            <label class="sr-only" for="message">Text</label>
+                            <label class="sr-only" for="note_text">Text</label>
 
                             <textarea
+
                                     class="w-full rounded-lg border-gray-200 p-3 text-sm"
                                     placeholder="Note text"
                                     rows="8"
-                                    id="message"
-                            ></textarea>
+
+                                    id="note_text"
+                                    name="note_text"
+                            ><?=htmlspecialchars($note['note_text'])?></textarea>
                         </div>
 
                         <div class="mt-4">

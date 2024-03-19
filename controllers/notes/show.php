@@ -4,11 +4,15 @@ $currentUser = 1;
 
 $config = require 'config.php';
 $db = new Database($config['database'], 'root', 'root');
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    header('Location: http://notes.nl/notes');
+    die();
+}
 
 
 $note = $db->query('SELECT * FROM notes where id = :id',['id' => $_GET['id']])->getOrFail();
 
 authorize($note['user_id'] === $currentUser);
 $heading = 'Save';
-require 'views/notes/note.view.php';
+require 'views/notes/show.view.php';

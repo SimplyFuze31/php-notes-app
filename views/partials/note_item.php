@@ -5,17 +5,17 @@
     <div class="sm:flex sm:justify-between sm:gap-4">
         <div>
             <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
-                <?=$note['title']?>
+                <?=htmlspecialchars($note['title'])?>
             </h3>
 
-     <p class="mt-1 text-xs font-medium text-gray-600">By <?= $note['first_name'].' '.$note['last_name']?></p>
+     <p class="mt-1 text-xs font-medium text-gray-600">By <?= htmlspecialchars($note['first_name'].' '.$note['last_name'])?></p>
         </div>
 
     </div>
 
     <div class="mt-4">
         <p class="text-pretty text-sm text-gray-500">
-            <?=$note['note_text']?>
+            <?=htmlspecialchars($note['note_text']) ?>
         </p>
     </div>
 
