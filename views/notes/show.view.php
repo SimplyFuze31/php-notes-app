@@ -25,6 +25,7 @@
                                     name="title"
                                     value="<?=htmlspecialchars($note['title'])?>"
                             />
+                            <p class="text-sm text-red-500"><?=$errors['title'] ?? ''?></p>
                         </div>
 
                         <div>
@@ -39,7 +40,11 @@
                                     id="note_text"
                                     name="note_text"
                             ><?=htmlspecialchars($note['note_text'])?></textarea>
+                            <p class="text-sm text-red-500"><?=$errors['note_text'] ?? ''?></p>
+                            <input type="hidden" name="note_id" value="<?= $note['id']?>">
+                            <input type="hidden" name="__method" value="PATCH">
                         </div>
+
 
                         <div class="mt-4">
                             <button
