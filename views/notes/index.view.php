@@ -1,5 +1,5 @@
-<?php require view('partials/head.php')?>
-<?php require view('partials/header.php')?>
+<?php view('partials/head.php')?>
+<?php view('partials/header.php')?>
 
 
 
@@ -24,7 +24,7 @@
 
             </a>
             <?php foreach ($notes as $note){
-                require view('partials/note_item.php');
+                view('partials/note_item.php', ['note' => $note]);
             }
             ?>
 
@@ -37,4 +37,4 @@
 
 
 
-<?php require view('partials/footer.php')?>
+<?php view('partials/footer.php')?>

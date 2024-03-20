@@ -1,5 +1,7 @@
 <?php
 
+use Core\Router;
+
 const BASE_PATH = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
 
 require BASE_PATH.'Core/functions.php';
@@ -9,5 +11,7 @@ spl_autoload_register(function ($class){
    require base_path($class.'.php');
 });
 
-require base_path('Core/router.php');
+$router = new Router();
+require base_path('routes.php');
 
+$router->route($_SERVER['REDIRECT_URL'],$_POST['__method'] ?? $_SERVER['REQUEST_METHOD']);

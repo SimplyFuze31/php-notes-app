@@ -1,5 +1,5 @@
-<?php require view('partials/head.php') ?>
-<?php require view('partials/header.php') ?>
+<?php view('partials/head.php') ?>
+<?php view('partials/header.php') ?>
 
 
 <div class="grid md:grid-cols-1 gap-4 lg:grid-cols-4  md:gap-8">
@@ -45,8 +45,7 @@
                     </div>
 
                     <div>
-                        <label for="create_date"></label>
-                        <input id="create_date" name="create_date"  type="text" hidden value="<?= date("Y-m-d")?>">
+                        <input id="__method" name="__method" type="text" hidden value="POST" >
 
                     </div>
 
@@ -55,7 +54,7 @@
                                 type="submit"
                                 class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
                         >
-                            <?=$heading?> note
+                            Create note
                         </button>
                     </div>
                 </form>
@@ -66,4 +65,4 @@
 <div></div>
 
 
-<?php require view('partials/footer.php') ?>
+<?php view('partials/footer.php') ?>

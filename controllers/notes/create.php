@@ -18,17 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $errors['note_text'] = 'The text field should be from 1 to 1500 characters';
 
     if (count($errors) === 0 ){
-        $db->query('INSERT INTO `notes` (`title`, `note_text`, `create_date`, `user_id`) VALUES (:title, :note_text, :create_date,:user_id)',[
+        $db->query('INSERT INTO notes (title, note_text, create_date, user_id) VALUES (:title, :note_text, :create_date,:user_id)',[
             'title' => $_POST['title'],
             'note_text'=>$_POST['note_text'],
             'create_date'=>date('Y-m-d'),
             'user_id'=>$currentUser
         ]);
-        header('Location: http://notes.nl/notes');
+        header('Location: /notes');
         die();
     }
 }
 
 
-$heading = 'Create';
-require view('notes/create.view.php');
+
+view('notes/create.view.php', ['errors' => $errors]);

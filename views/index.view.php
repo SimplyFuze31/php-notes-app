@@ -1,5 +1,5 @@
-<?php require view('partials/head.php')?>
-<?php require view('partials/header.php')?>
+<?php view('partials/head.php')?>
+<?php view('partials/header.php')?>
 
     <!-- Hero -->
     <div class="bg-slate-900">
@@ -31,4 +31,4 @@
     </div>
     <!-- End Hero -->
 
-<?php require view('partials/footer.php')?>
+<?php view('partials/footer.php')?>
