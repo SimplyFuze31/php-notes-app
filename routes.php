@@ -1,8 +1,8 @@
 <?php
 
 return [
-    '/' => 'controllers/index.php',
-    '/notes' => 'controllers/notes/index.php',
-    '/note' => 'controllers/notes/show.php',
-    '/note/create' => 'controllers/notes/create.php'
+    '/' => base_path('controllers/index.php'),
+    '/notes' => base_path('controllers/notes/index.php'),
+    '/note' => base_path('controllers/notes/show.php'),
+    '/note/create' => base_path('controllers/notes/create.php')
 ];

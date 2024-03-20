@@ -1,7 +1,7 @@
 <?php
 
 $currentUser = 1;
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database'], 'root', 'root');
 $errors = [];
 
@@ -27,4 +27,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 $heading = 'Create';
-require 'views/notes/create.view.php';
+require view('notes/create.view.php');

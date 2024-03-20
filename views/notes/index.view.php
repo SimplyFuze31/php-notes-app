@@ -24,7 +24,7 @@
 
             </a>
             <?php foreach ($notes as $note){
-                require 'views/partials/note_item.php';
+                require view('partials/note_item.php');
             }
             ?>
 
