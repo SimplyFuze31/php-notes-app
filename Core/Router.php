@@ -33,7 +33,7 @@ class Router
         ];
     }
 
-    function patch(string $uri, string $controller): void
+    function patch(string $uri, $controller): void
     {
         $this->routes[] = [
             'uri' => $uri,
@@ -42,7 +42,7 @@ class Router
         ];
     }
 
-    function put(string $uri, string $controller): void
+    function put(string $uri, $controller): void
     {
         $this->routes[] = [
             'uri' => $uri,
@@ -53,10 +53,9 @@ class Router
 
     function route($uri, $method)
     {
-        echo $uri;
-        echo $method;
         foreach ($this->routes as $route) {
             if($route['uri'] === $uri and $route['method'] === $method){
+                //dd("$uri   $method");
                 return require $route['controller'];
             }
         }

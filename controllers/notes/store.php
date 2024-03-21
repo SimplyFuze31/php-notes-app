@@ -3,7 +3,6 @@
 use Core\Database;
 use Core\Validator;
 
-echo 'store';
 $currentUser = 1;
 
 $config = require base_path('config.php');
@@ -17,7 +16,7 @@ if (!Validator::string($_POST['title'], max: 300))
 if (!Validator::string($_POST['note_text']))
     $errors['note_text'] = 'The text field should be from 1 to 1500 characters';
 
-if (count($errors) === 0) {
+if (empty($errors)) {
     $db->query("INSERT INTO notes (title, note_text, create_date, user_id) VALUES (:title, :note_text, :create_date,:user_id)", [
         'title' => $_POST['title'],
         'note_text' => $_POST['note_text'],

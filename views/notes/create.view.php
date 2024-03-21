@@ -14,7 +14,7 @@
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 
             <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                <form class="space-y-4" method="post">
+                <form class="space-y-4" method="post" action="http://notes.nl/notes">
                     <div>
                         <label class="sr-only" for="title">Title</label>
                         <input
@@ -42,11 +42,6 @@
                                 name="note_text"
                         ><?= $_POST['note_text'] ?? ''?></textarea>
                         <p class="text-red-500 text-sm"><?=$errors['note_text'] ?? '' ?></p>
-                    </div>
-
-                    <div>
-                        <input id="__method" name="__method" type="text" hidden value="POST" >
-
                     </div>
 
                     <div class="mt-4">
