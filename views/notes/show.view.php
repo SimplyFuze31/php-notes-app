@@ -46,14 +46,25 @@
                         </div>
 
 
-                        <div class="mt-4">
+
                             <button
                                     type="submit"
                                     class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
                             >
                                 Update note
                             </button>
-                        </div>
+
+
+                    </form>
+                    <form method="post">
+                        <input name="__method" hidden value="DELETE"/>
+                        <input type="hidden" name="note_id" value="<?= $note['id']?>">
+                        <button
+                                type="submit"
+                                class="inline-block w-full rounded-lg bg-red-500 px-5 py-3 font-medium text-white sm:w-auto"
+                        >
+                            Delete note
+                        </button>
                     </form>
                 </div>
             </div>
