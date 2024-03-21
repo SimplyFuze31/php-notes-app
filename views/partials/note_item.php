@@ -24,6 +24,9 @@
             <dt class="text-sm font-medium text-gray-600">Published</dt>
             <dd class="text-xs text-gray-500"><?= date_format(date_create($note['create_date']), "d F Y")?></dd>
         </div>
-
+        <div class="flex flex-col">
+            <dt class="text-sm font-medium text-gray-600">Modified</dt>
+            <dd class="text-xs text-gray-500"><?= date_format(date_create($note['modification_date']) ?? '', "d F Y")?></dd>
+        </div>
     </dl>
 </a>
