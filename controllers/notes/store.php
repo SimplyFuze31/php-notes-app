@@ -1,12 +1,11 @@
 <?php
 
-use Core\Database;
+use Core\App;
 use Core\Validator;
 
 $currentUser = 1;
 
-$config = require base_path('config.php');
-$db = new Database($config['database'], 'root', 'root');
+$db = App::resolve('Core\Database');
 
 $errors = [];
 

@@ -1,9 +1,8 @@
 <?php
 
-use Core\Database;
+use Core\App;
 
-$config = require base_path('config.php');
-$db = new Database($config['database'], 'root', 'root');
+$db = App::resolve('Core\Database');
 
 $userid = 1;
 
