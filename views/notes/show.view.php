@@ -14,54 +14,64 @@
             <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 
                 <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                    <form class="space-y-4" method="post">
-                        <div>
-                            <label class="sr-only" for="title">Title</label>
+
+                        <div class="space-y-4" >
+                            <div>
+                                <label class="sr-only" for="title">Title</label>
+                                <input
+                                        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="Note title"
+                                        type="text"
+                                        id="title"
+                                        name="title"
+                                        value="<?= htmlspecialchars($note['title']) ?>"
+                                        form="update_form"
+                                />
+                                <p class="text-sm text-red-500"><?= $errors['title'] ?? '' ?></p>
+                            </div>
+
+                            <div>
+                                <label class="sr-only" for="note_text">Text</label>
+
+                                <textarea
+                                        class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        placeholder="Note text"
+                                        rows="8"
+                                        id="note_text"
+                                        name="note_text"
+                                        form="update_form"
+                                ><?= htmlspecialchars($note['note_text']) ?></textarea>
+                                <p class="text-sm text-red-500"><?= $errors['note_text'] ?? '' ?></p>
+                                <input type="hidden" name="note_id" form="update_form"  value="<?= $note['id'] ?>">
+                                <input type="hidden" name="note_id" form="delete_form" value="<?= $note['id'] ?>">
+
+                            </div>
                             <input
-                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                    placeholder="Note title"
-                                    type="text"
-                                    id="title"
-                                    name="title"
-                                    value="<?= htmlspecialchars($note['title']) ?>"
+                                    type="submit"
+                                    class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                                    form="update_form"
+
+                                    value="Save note"
                             />
-                            <p class="text-sm text-red-500"><?= $errors['title'] ?? '' ?></p>
+
+                            <input
+                                    type="submit"
+                                    class="inline-block w-full rounded-lg bg-red-500 px-5 py-3 font-medium text-white sm:w-auto"
+                                    form="delete_form"
+                                    value="Delete note"
+                            />
                         </div>
 
-                        <div>
-                            <label class="sr-only" for="note_text">Text</label>
 
-                            <textarea
-                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                    placeholder="Note text"
-                                    rows="8"
-                                    id="note_text"
-                                    name="note_text"
-                            ><?= htmlspecialchars($note['note_text']) ?></textarea>
-                            <p class="text-sm text-red-500"><?= $errors['note_text'] ?? '' ?></p>
-                            <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
-                            <input type="hidden" name="__method" value="PATCH">
-                        </div>
-                        <button
-                                type="submit"
-                                class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                        >
-                            Update note
-                        </button>
-
-
-                    </form>
-                    <form method="post">
-                        <input name="__method" hidden value="DELETE"/>
-                        <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
-                        <button
-                                type="submit"
-                                class="inline-block w-full rounded-lg bg-red-500 px-5 py-3 font-medium text-white sm:w-auto"
-                        >
-                            Delete note
-                        </button>
-                    </form>
                 </div>
+
+                <form id="update_form" action="/note" method="post">
+                    <input hidden name="__method" value="PATCH">
+                </form>
+
+                <form id="delete_form" action="/note" method="post">
+                    <input name="__method" hidden value="DELETE"/>
+                </form>
             </div>
         </div>
     </div>
