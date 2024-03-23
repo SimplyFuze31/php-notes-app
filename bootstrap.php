@@ -3,13 +3,13 @@
 use Core\App;
 use Core\Container;
 use Core\Database;
+
 $container = new Container();
 
-$container->bind('Core\Database',function (){
+$container->bind(Database::class, function (): Database {
     $config = require base_path('config.php');
     return new Database($config['database'], 'root', 'root');
 });
-
 
 
 App::addContainer($container);

@@ -32,10 +32,7 @@ class Database
     {
         $result = $this->get();
         if (!$result){
-
-
             abort();
-
         }
         return $result;
     }

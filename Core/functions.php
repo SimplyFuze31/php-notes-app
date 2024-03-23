@@ -33,6 +33,11 @@ function abort($code = Response::NOT_FOUND) : void
 
     die($code);
 }
+function redirect($uri)
+{
+    header("location: $uri");
+    die();
+}
 
 
 function base_path(string $path) : string

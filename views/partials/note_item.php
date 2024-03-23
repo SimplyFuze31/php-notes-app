@@ -8,7 +8,7 @@
                 <?=htmlspecialchars($note['title'])?>
             </h3>
 
-     <p class="mt-1 text-xs font-medium text-gray-600">By <?= htmlspecialchars($note['first_name'].' '.$note['last_name'])?></p>
+     <p class="mt-1 text-xs font-medium text-gray-600">By <?= htmlspecialchars($note['name'])?></p>
         </div>
 
     </div>
